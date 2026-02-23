@@ -1,1 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    font-family: Montserrat;
+    font-size: 18px;
+    line-height: 1.428571429;
+    color: #404041;
+}
