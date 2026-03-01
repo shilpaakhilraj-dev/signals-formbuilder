@@ -1,1 +1,78 @@
-<p>dynamic-form works!</p>
+<div class="container p-4">
+  <form [formGroup]="form()" (ngSubmit)="onSubmit()">
+    @for (row of groupedFields(); track row[0]) {
+        <div class="row mb-1">
+            @for (field of row[1]; track field.key) {
+              @switch (field.type) {
+                
+                @case('text') {
+                  <div [class]="field.col || 'col-md-12'">
+                     <sg-input
+                        [formControlName]="field.key"
+                        [name]="field.key"
+                        [label]="field.label"
+                        [type]="field.type"
+                        [placeholder]="field.placeholder ?? ''"
+                        [required]="field.required ?? false"
+                        [errorMessages]="getErrorMessages(field)"
+                        [submitTriggered]="submitTriggered()"
+                    ></sg-input>
+                </div>
+                }
+                @case('number') {
+                  <div [class]="field.col || 'col-md-12'">
+                     <sg-input
+                        [formControlName]="field.key"
+                        [name]="field.key"
+                        [label]="field.label"
+                        [type]="field.type"
+                        [placeholder]="field.placeholder ?? ''"
+                        [required]="field.required ?? false"
+                        [errorMessages]="getErrorMessages(field)"
+                        [submitTriggered]="submitTriggered()"
+                    ></sg-input>
+                </div>
+                }
+                @case('email') {
+                  <div [class]="field.col || 'col-md-12'">
+                     <sg-input
+                        [formControlName]="field.key"
+                        [name]="field.key"
+                        [label]="field.label"
+                        [type]="field.type"
+                        [placeholder]="field.placeholder ?? ''"
+                        [required]="field.required ?? false"
+                        [errorMessages]="getErrorMessages(field)"
+                        [submitTriggered]="submitTriggered()"
+                    ></sg-input>
+                </div>
+                }
+                @case('password') {
+                  <div [class]="field.col || 'col-md-12'">
+                     <sg-input
+                        [formControlName]="field.key"
+                        [name]="field.key"
+                        [label]="field.label"
+                        [type]="field.type"
+                        [placeholder]="field.placeholder ?? ''"
+                        [required]="field.required ?? false"
+                        [errorMessages]="getErrorMessages(field)"
+                        [submitTriggered]="submitTriggered()"
+                    ></sg-input>
+                </div>
+                }
+              }
+            }
+        </div>
+    }
+
+    @if (buttonLabel()) {
+        <div class="mt-3">
+        <button type="submit" class="btn btn-primary">
+          {{buttonLabel()}}
+        </button>
+      </div>
+    }
+
+  </form>
+</div>

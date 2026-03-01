@@ -1,0 +1,42 @@
+<!-- This component can handle input type text, number, email or password -->
+
+<div class="mb-3">
+    @if (label()) {
+        <label class="form-label">
+            {{ label() }}
+
+            @if (required()) {
+                <span class="text-danger ml-1">*</span>
+            }
+
+        </label>
+    }
+
+    <div class="input-group">
+        @if (icon()) {
+        <span class="input-group-text">
+            <i [class]="icon()"></i>
+        </span>
+        }
+
+        <input
+            class="form-control"
+            [id]="name()" 
+            [name]="name()"
+            [required]="required()"
+            [class.is-disabled]="disabled()"
+            [class.is-invalid]="isInvalid"
+            [type]="type()"
+            [placeholder]="placeholder()"
+            [disabled]="disabled()"
+            (input)="handleInput($event)"
+            (blur)="handleBlur()" />
+    </div>
+
+    @if (isInvalid && errorMessage()) {
+        <div class="error-text">
+        {{ errorMessage() }}
+        </div>
+    }
+
+</div>

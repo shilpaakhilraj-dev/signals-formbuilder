@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="page">
+        <sg-title [title]="title()"></sg-title>
+        <div class="row">
+            <div class="col-md-6">
+                <sg-card>
+                    <dynamic-form [form]="form()" [config]="config()" [buttonLabel]="'Register'" (submitForm)="logValues($event)"></dynamic-form>
+                </sg-card>
+            </div>
+            <div class="col-md-6">
+                <pre>{{this.form().value | json }}</pre>
+            </div>
+        </div>
+    </div>
+</div>

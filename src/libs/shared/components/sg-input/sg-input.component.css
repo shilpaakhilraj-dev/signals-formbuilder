@@ -1,0 +1,36 @@
+.invalid-input {
+  border-color: #dc3545;
+  outline-color: #dc3545;
+}
+
+.error-text {
+  color: #dc3545;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.required-asterisk {
+  color: #dc3545;
+}
+
+.form-label {
+    font-size: medium !important;
+    margin-bottom: 0 !important;
+    .ml-1 {
+        margin-left: -1px;
+    }
+}
+
+.form-control.is-invalid:focus {
+  box-shadow: none !important;
+}
+
+.form-control:focus {
+  box-shadow: none !important;
+  border-color: #b4b6b7 !important;
+}
+
+.form-control.is-invalid {
+  background-image: none !important; 
+}
+
